@@ -28,21 +28,21 @@ export type Style = { bold: (s: string) => string };
 export const PLAIN: Style = { bold: (s) => s };
 export const ANSI: Style = { bold: (s) => `\u001b[1m${s}\u001b[22m` };
 
-const SKIP_WORDS: Record<SkipReason, string> = {
-  'ignored-directory': 'ignored directory',
-  'foundry-library': 'Foundry library folder',
-  'depth-limit': 'below the depth limit',
-  symlink: 'symbolic link (not followed)',
-  'not-a-regular-file': 'not a regular file',
-  'env-file': '.env file (never read)',
-  lockfile: 'lockfile',
-  minified: 'minified file',
-  'not-text': 'file type not read',
-  'too-large': 'over the size limit',
-  binary: 'binary',
-  unreadable: 'unreadable',
-  'file-limit': 'after the file limit',
-  'byte-limit': 'after the byte limit',
+const SKIP_WORDS: Record<SkipReason, [string, string]> = {
+  'ignored-directory': ['ignored directory', 'ignored directories'],
+  'foundry-library': ['Foundry library folder', 'Foundry library folders'],
+  'depth-limit': ['entry below the depth limit', 'entries below the depth limit'],
+  symlink: ['symbolic link (not followed)', 'symbolic links (not followed)'],
+  'not-a-regular-file': ['special file', 'special files'],
+  'env-file': ['.env file (never read)', '.env files (never read)'],
+  lockfile: ['lockfile', 'lockfiles'],
+  minified: ['minified file', 'minified files'],
+  'not-text': ['file of a type not read', 'files of a type not read'],
+  'too-large': ['file over the size limit', 'files over the size limit'],
+  binary: ['binary file', 'binary files'],
+  unreadable: ['unreadable entry', 'unreadable entries'],
+  'file-limit': ['entry after the file limit', 'entries after the file limit'],
+  'byte-limit': ['entry after the byte limit', 'entries after the byte limit'],
 };
 
 const plural = (n: number, one: string, many = `${one}s`): string => `${n} ${n === 1 ? one : many}`;
@@ -93,7 +93,10 @@ export function formatReport(report: ScanReport, style: Style = PLAIN): string {
   section('Reported, not counted:', context);
 
   const skipped = Object.entries(report.scan.skipped.byReason)
-    .map(([reason, n]) => `${n} ${SKIP_WORDS[reason as SkipReason]}`)
+    .map(([reason, n]) => {
+      const [one, many] = SKIP_WORDS[reason as SkipReason];
+      return `${n} ${n === 1 ? one : many}`;
+    })
     .join(', ');
   out.push(
     `Read ${plural(report.scan.filesRead, 'file')}` +
