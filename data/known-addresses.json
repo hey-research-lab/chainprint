@@ -415,9 +415,12 @@
     },
     {
       "address": "0x0000ffffbe8efe702c8703ae3477ff5de3d319c0",
-      "name": "Uniswap Liquidity Launcher (Pools)",
-      "reason": "A vanity CREATE2 address of a launcher Uniswap deploys across chains; not specific to Robinhood Chain.",
-      "sources": ["https://pools.trade/"],
+      "name": "Uniswap LiquidityLauncher v3.2.0",
+      "reason": "Uniswap's Liquidity Launchpad page lists this LiquidityLauncher at one address across the chains it names; not specific to Robinhood Chain.",
+      "sources": [
+        "https://developers.uniswap.org/docs/liquidity/liquidity-launchpad/deployments",
+        "https://pools.trade/"
+      ],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
