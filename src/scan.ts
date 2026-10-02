@@ -151,6 +151,8 @@ const CONFIG_NAME =
   /^(?:hardhat\.config\.[cm]?[jt]s|foundry\.toml|truffle-config\.js|truffle\.js|wagmi\.config\.[cm]?[jt]sx?)$/;
 const JS_LIKE = /\.(?:[cm]?[jt]sx?|vue|svelte|astro)$/i;
 const DOC_EXT = /\.(?:md|mdx|markdown|rst|adoc|txt)$/i;
+/** HEY's own declaration files: what a builder says about the project, read like a README. */
+const HEY_DECLARATION = /^hey-(?:project|ship)\.json$/;
 
 function classify(file: WalkedFile): FileClass {
   const recordable = !TEST_DATA_SEGMENT.test(file.path);
@@ -171,7 +173,7 @@ function classify(file: WalkedFile): FileClass {
       return { kind: 'deployment', rule: 'ignition-deployment', chain: Number(ignition[1]) };
   }
   if (ENV_TEMPLATE_NAME.test(file.name)) return { kind: 'env-template' };
-  if (DOC_EXT.test(file.name)) return { kind: 'documentation' };
+  if (DOC_EXT.test(file.name) || HEY_DECLARATION.test(file.name)) return { kind: 'documentation' };
   if (file.name === 'package.json') return { kind: 'package' };
   if (CONFIG_NAME.test(file.name)) return { kind: 'config' };
   if (JS_LIKE.test(file.name) && PATTERNS.defineChainCall.test(file.text))
@@ -314,6 +316,8 @@ const shortMatch = (matched: string): string => {
 function lineRules(cls: FileClass['kind'], lines: readonly string[]): Match[] {
   const out: Match[] = [];
   const isConfig = cls === 'config';
+  /** Hardhat 3 declares chains as numeric keys of `chainDescriptors: { 4663: { … } }`. */
+  const descriptors = isConfig && lines.some((l) => PATTERNS.chainDescriptors.test(l));
   const nameRule = cls !== 'package';
   lines.forEach((text, i) => {
     const line = i + 1;
@@ -324,13 +328,16 @@ function lineRules(cls: FileClass['kind'], lines: readonly string[]): Match[] {
     if (isConfig) {
       push(
         'chain-id-config',
-        firstMatch(PATTERNS.configChainId, text) ?? firstMatch(PATTERNS.defineChainId, text),
+        firstMatch(PATTERNS.configChainId, text) ??
+          firstMatch(PATTERNS.defineChainId, text) ??
+          (descriptors ? firstMatch(PATTERNS.descriptorKey, text) : undefined),
         'chain id 4663 in a toolchain config',
       );
       push(
         'testnet-marker',
         firstMatch(PATTERNS.testnet.configChainId, text) ??
-          firstMatch(PATTERNS.testnet.defineChainId, text),
+          firstMatch(PATTERNS.testnet.defineChainId, text) ??
+          (descriptors ? firstMatch(PATTERNS.testnet.descriptorKey, text) : undefined),
         'chain id 46630 (testnet) in a toolchain config',
       );
     } else {
@@ -354,8 +361,14 @@ function lineRules(cls: FileClass['kind'], lines: readonly string[]): Match[] {
     );
     push('rpc-host', firstMatch(PATTERNS.rpcHost, text), 'public RPC hostname');
     push('explorer-host', firstMatch(PATTERNS.explorerHost, text), 'explorer hostname');
-    if (nameRule)
+    if (nameRule) {
       push('chain-name', firstMatch(PATTERNS.chainName, text), 'the name Robinhood Chain');
+      push(
+        'testnet-marker',
+        firstMatch(PATTERNS.testnet.chainName, text),
+        'Robinhood Chain testnet',
+      );
+    }
   });
   return out;
 }
@@ -370,6 +383,14 @@ function docMatches(lines: readonly string[]): Match[] {
     PATTERNS.docChainId,
   ];
   lines.forEach((text, i) => {
+    const testnet = firstMatch(PATTERNS.testnet.chainName, text);
+    if (testnet !== undefined)
+      out.push({
+        rule: 'testnet-marker',
+        line: i + 1,
+        matched: testnet,
+        detail: `"${testnet}" in documentation`,
+      });
     for (const re of patterns) {
       const matched = firstMatch(re, text);
       if (matched !== undefined) {
@@ -420,6 +441,16 @@ function envMatches(lines: readonly string[]): Match[] {
         matched: key,
         detail: `${key} names eip155:46630 (testnet)`,
         excerptOverride: shown('eip155:46630'),
+      });
+      return;
+    }
+    if (/TESTNET/i.test(key) && (chainKey || /ROBINHOOD/i.test(key) || publicValue)) {
+      out.push({
+        rule: 'testnet-marker',
+        line,
+        matched: key,
+        detail: `${key} is a testnet setting`,
+        excerptOverride: shown(value === '' ? '' : '<redacted>'),
       });
       return;
     }
@@ -518,7 +549,11 @@ function matchFile(file: WalkedFile, lines: readonly string[]): Match[] {
   const cls = classify(file);
   switch (cls.kind) {
     case 'deployment':
-      return [...deploymentMatches(file, cls, lines), ...knownAddressMatches(lines)];
+      // A known address in another chain's record (a testnet run) is not a mainnet marker.
+      return [
+        ...deploymentMatches(file, cls, lines),
+        ...(cls.chain === CHAIN_ID ? knownAddressMatches(lines) : []),
+      ];
     case 'env-template':
       return [...envMatches(lines), ...knownAddressMatches(lines)];
     case 'documentation':

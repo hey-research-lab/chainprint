@@ -120,7 +120,7 @@ export const RULES: readonly RuleDefinition[] = [
     reads:
       'hardhat.config.*, foundry.toml, truffle-config.js, truffle.js, wagmi.config.*, and any JS/TS file that calls defineChain(',
     matches:
-      'A chain-id key (chainId, chain_id, chainID, networkId, network_id, chain) assigned 4663 or 0x1237; in a defineChain file also `id: 4663`.',
+      'A chain-id key (chainId, chain_id, chainID, networkId, network_id, chain) assigned 4663 or 0x1237; in a defineChain file also `id: 4663`; in a Hardhat 3 config with chainDescriptors also a `4663: {` entry.',
   },
   {
     id: 'chain-id-code',
@@ -207,7 +207,8 @@ export const RULES: readonly RuleDefinition[] = [
     tier: 'mention',
     counted: true,
     title: 'Robinhood Chain mentioned in documentation',
-    reads: 'documentation: *.md, *.mdx, *.markdown, *.rst, *.adoc, *.txt',
+    reads:
+      'documentation: *.md, *.mdx, *.markdown, *.rst, *.adoc, *.txt, and HEY declaration files (hey-project.json, hey-ship.json)',
     matches:
       'The name Robinhood Chain, eip155:4663, the public RPC or explorer hostname, or "chain id" followed by 4663. The weakest marker: anyone can write a README.',
   },
@@ -219,7 +220,7 @@ export const RULES: readonly RuleDefinition[] = [
     title: 'Robinhood Chain testnet (46630)',
     reads: 'every file chainprint reads except documentation',
     matches:
-      'The testnet chain id 46630 / 0xb626 where the mainnet rules would look for 4663 (chain-id keys, eip155:46630, broadcast/<script>/46630/, deployments/<network>/.chainId, ignition chain-46630). A testnet is not Robinhood Chain mainnet; it never changes the score.',
+      'The testnet chain id 46630 / 0xb626 where the mainnet rules would look for 4663 (chain-id keys, eip155:46630, broadcast/<script>/46630/, deployments/<network>/.chainId, ignition chain-46630), an env-template key naming TESTNET, or the words "Robinhood Chain testnet". A testnet is not Robinhood Chain mainnet; it never changes the score.',
   },
 ];
 
@@ -307,6 +308,9 @@ const codeKey = (value: string): RegExp =>
     `[\\w$.]*chain[_-]?id[\\w$]*["'\\]]?\\s*(?:===?|!==?|:=|=|:)\\s*["']?${value}n?${END}`,
     'i',
   );
+/** A numeric object key `4663: {` — a Hardhat 3 `chainDescriptors` entry. */
+const descriptorKey = (value: string): RegExp =>
+  new RegExp(`(?<![\\w$.'"])["']?${value}["']?\\s*:\\s*\\{`);
 /** ethers: new JsonRpcProvider(url, 4663), Network.from(4663), getDefaultProvider(4663). */
 const ethersNetwork = (value: string): RegExp =>
   new RegExp(
@@ -321,22 +325,27 @@ export const PATTERNS = {
   configChainId: configKey(N),
   defineChainCall: /\bdefineChain\s*\(/,
   defineChainId: defineChainId(N),
+  chainDescriptors: /\bchainDescriptors\s*:/,
+  descriptorKey: descriptorKey(N),
   codeChainId: codeKey(N),
   ethersNetwork: ethersNetwork(N),
   caip2: new RegExp(`${escapeRe(CAIP2)}(?!\\d)`, 'i'),
   rpcHost: hostPattern(PUBLIC_RPC_HOST),
   explorerHost: hostPattern(EXPLORER_HOST),
   /** Not when it is a hostname label (robinhoodchain.blockscout.com is the explorer rule's). */
-  chainName: /robinhood[\s_-]?chain(?![\w-]*\.[a-z])/i,
+  chainName: /robinhood[\s_-]?chain(?![\w-]*\.[a-z])(?![\s_-]*testnet)/i,
   docChainId: new RegExp(`chain[\\s_-]?id\\W{0,4}${N}${END}`, 'i'),
   /** Any 0x address not embedded in a longer hex string. */
   address: /(?<![0-9a-zA-Z])0x[0-9a-fA-F]{40}(?![0-9a-zA-Z])/g,
   testnet: {
     configChainId: configKey(TN),
     defineChainId: defineChainId(TN),
+    descriptorKey: descriptorKey(TN),
     codeChainId: codeKey(TN),
     ethersNetwork: ethersNetwork(TN),
     caip2: new RegExp(`eip155:${TESTNET_CHAIN_ID}(?!\\d)`, 'i'),
+    /** "Robinhood Chain testnet", ROBINHOOD_CHAIN_TESTNET. */
+    chainName: /robinhood[\s_-]?chain[\s_-]*testnet/i,
   },
 } as const;
 

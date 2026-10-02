@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## 0.1.1 — 2026-10-02
+
+- Hardhat 3 configs: a `4663: { … }` entry under `chainDescriptors` is a toolchain chain id (`chain-id-config`); it was missed.
+- HEY's own declaration files (`hey-project.json`, `hey-ship.json`) are read like documentation (`doc-mention`), never as code: what a builder writes about itself added 20 points per file.
+- A known infrastructure address inside a testnet (46630) or other-chain broadcast record no longer counts toward mainnet confidence.
+- Testnet-only repositories: an env-template key naming `TESTNET` and the words "Robinhood Chain testnet" are testnet markers (never counted), not mainnet settings or mentions.
+- Issue templates (bug, idea) with private security reporting and HEY corrections linked.
+
 ## 0.1.0 — 2026-10-02
 
 - `chainprint [path]`: an offline scan of a local source tree for Robinhood Chain (4663) markers,
