@@ -9,9 +9,7 @@
       "address": "0x0889b4cbbb5a8ca2a722734c147fd5a8d956d863",
       "name": "Robinlaunch V4",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -19,9 +17,7 @@
       "address": "0x0c37a24f5d23a486fa692d1500881d698b1f77a4",
       "name": "Pons V1",
       "kind": "launch-factory",
-      "sources": [
-        "https://github.com/ponsdotdev/ponsfamily"
-      ],
+      "sources": ["https://github.com/ponsdotdev/ponsfamily"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -29,9 +25,7 @@
       "address": "0x108eb6d67c079beb1ef328850a88c2bbdb4617ea",
       "name": "Robinlaunch V8",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -39,9 +33,7 @@
       "address": "0x16cf6788b762ee8969744586ed16fc5705140dd7",
       "name": "Klik",
       "kind": "launch-factory",
-      "sources": [
-        "https://klik.finance/"
-      ],
+      "sources": ["https://klik.finance/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -49,9 +41,7 @@
       "address": "0x1eef016f22a943abc7dd11422edee9d235942104",
       "name": "Long.xyz launch factory",
       "kind": "launch-factory",
-      "sources": [
-        "https://long.xyz/"
-      ],
+      "sources": ["https://long.xyz/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -59,9 +49,7 @@
       "address": "0x1f7d7550b1b028f7571e69a784071f0205fd2efa",
       "name": "Uniswap V3 factory",
       "kind": "dex-factory",
-      "sources": [
-        "https://docs.uniswap.org/contracts/v3/reference/core/UniswapV3Factory"
-      ],
+      "sources": ["https://docs.uniswap.org/contracts/v3/reference/core/UniswapV3Factory"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/dex-pools.ts"
     },
     {
@@ -69,9 +57,7 @@
       "address": "0x2110f111d2776ef53366b9eaef8c5619fde09eef",
       "name": "Robinpad reflection legacy",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.robinpad.app/docs"
-      ],
+      "sources": ["https://www.robinpad.app/docs"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -79,9 +65,7 @@
       "address": "0x22e99278308b393ea1260859b181ad7e78f5eeed",
       "name": "Long.xyz launcher",
       "kind": "launch-factory",
-      "sources": [
-        "https://long.xyz/"
-      ],
+      "sources": ["https://long.xyz/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -89,9 +73,7 @@
       "address": "0x26605f322f7ff986f381bb9a6e3f5dab0beaeb09",
       "name": "Flap",
       "kind": "launch-factory",
-      "sources": [
-        "https://flap.sh/"
-      ],
+      "sources": ["https://flap.sh/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -99,9 +81,7 @@
       "address": "0x2a9d79b28d506b209511792795a182e726975c76",
       "name": "Robinpad reflection pair",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.robinpad.app/docs"
-      ],
+      "sources": ["https://www.robinpad.app/docs"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -109,9 +89,7 @@
       "address": "0x346c46cf7d8dfed2c614c38570c697ac948feeec",
       "name": "Robinpad instant gold",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.robinpad.app/docs"
-      ],
+      "sources": ["https://www.robinpad.app/docs"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -119,9 +97,7 @@
       "address": "0x45e213f086d721ac8baacf6875940a278399c994",
       "name": "Robinlaunch direct V6",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -129,9 +105,7 @@
       "address": "0x4fb5057634f3cae0b400e753852ea12b5d6278e2",
       "name": "Robinlaunch V11",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -139,9 +113,7 @@
       "address": "0x511cf20f3c794bdf95be18d93a0f1539919ba8fa",
       "name": "Robinlaunch V5",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -149,9 +121,7 @@
       "address": "0x519fd71f5df8242fb8bccaa346ea5b20c336273e",
       "name": "EasyA Kickstart",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.easya.io/"
-      ],
+      "sources": ["https://www.easya.io/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -159,9 +129,7 @@
       "address": "0x52afebdb95cda3c221eb415abb9cee051e3ca082",
       "name": "Robinlaunch direct V4",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -169,9 +137,7 @@
       "address": "0x5bd1fbe78a78fe8236fa00cf48fbeba74ae34661",
       "name": "letscash.fun",
       "kind": "launch-factory",
-      "sources": [
-        "https://letscash.fun/"
-      ],
+      "sources": ["https://letscash.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -179,9 +145,7 @@
       "address": "0x5cf8e499c7c466c7e2cf127bdf129f57151e65dc",
       "name": "Flaunch",
       "kind": "launch-factory",
-      "sources": [
-        "https://github.com/flayerlabs/flaunch-sdk"
-      ],
+      "sources": ["https://github.com/flayerlabs/flaunch-sdk"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -189,9 +153,7 @@
       "address": "0x5fcc1df0dc020cf454e742e9a8ae2554c37a452c",
       "name": "hood.fun community",
       "kind": "launch-factory",
-      "sources": [
-        "https://hood.fun/"
-      ],
+      "sources": ["https://hood.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -199,9 +161,7 @@
       "address": "0x62b33a039d289cbda50ebeb72fe4261449e61bcf",
       "name": "LaunchHood v3",
       "kind": "launch-factory",
-      "sources": [
-        "https://launchhood.com/"
-      ],
+      "sources": ["https://launchhood.com/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -209,9 +169,7 @@
       "address": "0x6a63d96ef77ae569fcb85934cf1bd1ec7fe9b33d",
       "name": "hood.fun legacy",
       "kind": "launch-factory",
-      "sources": [
-        "https://hood.fun/"
-      ],
+      "sources": ["https://hood.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -219,9 +177,7 @@
       "address": "0x6bfab86122842eb6e8602124dcebf6a373498ffc",
       "name": "Robinpad instant robin",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.robinpad.app/docs"
-      ],
+      "sources": ["https://www.robinpad.app/docs"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -229,9 +185,7 @@
       "address": "0x6ce85c4b7ce12903e5867652c265bccce57f935f",
       "name": "Robinpad reflection",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.robinpad.app/docs"
-      ],
+      "sources": ["https://www.robinpad.app/docs"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -239,9 +193,7 @@
       "address": "0x6e4910ea5a04376032f6564da9a9e4e88b7a87c1",
       "name": "ape.store",
       "kind": "launch-factory",
-      "sources": [
-        "https://ape.store/"
-      ],
+      "sources": ["https://ape.store/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -249,9 +201,7 @@
       "address": "0x700da3295617ec0c856cf303f77145298c1d4994",
       "name": "Robinlaunch V12",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -259,9 +209,7 @@
       "address": "0x77dc6f6361b7b99456fc3761ce5b7dda80d83f9d",
       "name": "trench.today",
       "kind": "launch-factory",
-      "sources": [
-        "https://docs.bitquery.io/docs/blockchain/robinhood/trench-today-api/"
-      ],
+      "sources": ["https://docs.bitquery.io/docs/blockchain/robinhood/trench-today-api/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -269,9 +217,7 @@
       "address": "0x7e1eabd52ae29598e6483f72dcf1a70b14284db8",
       "name": "Pons V2",
       "kind": "launch-factory",
-      "sources": [
-        "https://github.com/ponsdotdev/ponsfamily"
-      ],
+      "sources": ["https://github.com/ponsdotdev/ponsfamily"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -279,9 +225,7 @@
       "address": "0x7ed598bcef8bd9edd8c97a195c6d13f40801ec7e",
       "name": "Pons V2",
       "kind": "launch-factory",
-      "sources": [
-        "https://github.com/ponsdotdev/ponsfamily"
-      ],
+      "sources": ["https://github.com/ponsdotdev/ponsfamily"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -289,9 +233,7 @@
       "address": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
       "name": "Uniswap v4 PoolManager",
       "kind": "pool-manager",
-      "sources": [
-        "https://developers.uniswap.org/contracts/v4/deployments"
-      ],
+      "sources": ["https://developers.uniswap.org/contracts/v4/deployments"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/dex-pools.ts"
     },
     {
@@ -299,9 +241,7 @@
       "address": "0x8660a7f019c7943b0b0a91b8e39aff3b6db6ae62",
       "name": "PAIR",
       "kind": "launch-factory",
-      "sources": [
-        "https://pair.fund/"
-      ],
+      "sources": ["https://pair.fund/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -309,9 +249,7 @@
       "address": "0x8bceaa40b9acdfaedf85adf4ff01f5ad6517937f",
       "name": "Uniswap V2 factory",
       "kind": "dex-factory",
-      "sources": [
-        "https://docs.uniswap.org/contracts/v2/reference/smart-contracts/factory"
-      ],
+      "sources": ["https://docs.uniswap.org/contracts/v2/reference/smart-contracts/factory"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/dex-pools.ts"
     },
     {
@@ -319,9 +257,7 @@
       "address": "0x8c529f0a77c07ce0e6796f153d292501ee6f66f6",
       "name": "hood.fun",
       "kind": "launch-factory",
-      "sources": [
-        "https://hood.fun/"
-      ],
+      "sources": ["https://hood.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -329,9 +265,7 @@
       "address": "0x9f1a2556015c29d8853a6289afa840359abac6ff",
       "name": "Robinlaunch boost",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -339,9 +273,7 @@
       "address": "0xa4552a787ea97649568adcf82e258b714d8affd4",
       "name": "Robinlaunch V7",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -349,9 +281,7 @@
       "address": "0xa5aab3f0c6eeadf30ef1d3eb997108e976351feb",
       "name": "Pons V1",
       "kind": "launch-factory",
-      "sources": [
-        "https://github.com/ponsdotdev/ponsfamily"
-      ],
+      "sources": ["https://github.com/ponsdotdev/ponsfamily"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -359,9 +289,7 @@
       "address": "0xaa9dcd9e246b710723ebe8d3ee947ff04a29c3d1",
       "name": "Robinlaunch V9",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -369,9 +297,7 @@
       "address": "0xaf9f3ce1d34909f59e88c23027f89d5807b0f915",
       "name": "Robinpad legacy",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.robinpad.app/docs"
-      ],
+      "sources": ["https://www.robinpad.app/docs"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -379,9 +305,7 @@
       "address": "0xb28c17b72538741590a3374127f84f79b59bbf30",
       "name": "Robinlaunch V10",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -389,9 +313,7 @@
       "address": "0xb6eb41b28bd96461d9a97954920823a8b7042af0",
       "name": "Robinlaunch V6",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -399,9 +321,7 @@
       "address": "0xb76bd3a49e46399df323dc06bebcee2dbd346230",
       "name": "Robinlaunch direct V8",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -409,9 +329,7 @@
       "address": "0xd3f2cc1731b7fd17f28798835c2e02f0a1839a94",
       "name": "Clanker v4",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.clanker.world/"
-      ],
+      "sources": ["https://www.clanker.world/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -419,9 +337,7 @@
       "address": "0xd7601cee401306fdea5833c6898181d9c770f800",
       "name": "Robinpad instant",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.robinpad.app/docs"
-      ],
+      "sources": ["https://www.robinpad.app/docs"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -429,9 +345,7 @@
       "address": "0xd9ec2db5f3d1b236843925949fe5bd8a3836fccb",
       "name": "Hoodit",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.geckoterminal.com/robinhood/hoodit/pools"
-      ],
+      "sources": ["https://www.geckoterminal.com/robinhood/hoodit/pools"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -439,9 +353,7 @@
       "address": "0xe33e9e479df8802cb0866d5d05258bec4cf62948",
       "name": "Pons launch-and-buy router",
       "kind": "launch-router",
-      "sources": [
-        "https://github.com/ponsdotdev/ponsfamily"
-      ],
+      "sources": ["https://github.com/ponsdotdev/ponsfamily"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -449,9 +361,7 @@
       "address": "0xe8cc4431adf8b5a847c113ef0c6af9043219cb37",
       "name": "Bags",
       "kind": "launch-factory",
-      "sources": [
-        "https://docs.bags.fm/robinhood/overview"
-      ],
+      "sources": ["https://docs.bags.fm/robinhood/overview"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -459,9 +369,7 @@
       "address": "0xeb3feed2716cf0eeada05b22e67424794e1f5a80",
       "name": "Robinpad factory",
       "kind": "launch-factory",
-      "sources": [
-        "https://www.robinpad.app/docs"
-      ],
+      "sources": ["https://www.robinpad.app/docs"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -469,9 +377,7 @@
       "address": "0xeb7c034704ef8dcd2d32324c1545f62fb4ad0862",
       "name": "Doppler Airlock",
       "kind": "launch-protocol",
-      "sources": [
-        "https://docs.doppler.lol/reference/contract-addresses"
-      ],
+      "sources": ["https://docs.doppler.lol/reference/contract-addresses"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/dex-pools.ts"
     },
     {
@@ -479,9 +385,7 @@
       "address": "0xf3b3e2a751f5891b42b31b0c0044ee90bb2fe079",
       "name": "Robinlaunch direct V9",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -489,9 +393,7 @@
       "address": "0xf4fc0cd27fc8ecf17e55ee4c3f7201897df3eb75",
       "name": "Pons V1",
       "kind": "launch-factory",
-      "sources": [
-        "https://ponsfamily.com/launchpad/create"
-      ],
+      "sources": ["https://ponsfamily.com/launchpad/create"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
@@ -499,9 +401,7 @@
       "address": "0xfe9868fb08d4af99f37c83839f87183b6ea1783a",
       "name": "Robinlaunch direct V7",
       "kind": "launch-factory",
-      "sources": [
-        "https://robinlaunch.fun/"
-      ],
+      "sources": ["https://robinlaunch.fun/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     }
   ],
@@ -510,27 +410,21 @@
       "address": "0x00004c4ccc709ef590f7c81102c0689f0263d4e9",
       "name": "Uniswap Liquidity Launcher v3.0.0",
       "reason": "Uniswap documents this CREATE2 address on every chain it supports; finding it says nothing about Robinhood Chain.",
-      "sources": [
-        "https://developers.uniswap.org/docs/liquidity/liquidity-launchpad/deployments"
-      ],
+      "sources": ["https://developers.uniswap.org/docs/liquidity/liquidity-launchpad/deployments"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
       "address": "0x0000ffffbe8efe702c8703ae3477ff5de3d319c0",
       "name": "Uniswap Liquidity Launcher (Pools)",
       "reason": "A vanity CREATE2 address of a launcher Uniswap deploys across chains; not specific to Robinhood Chain.",
-      "sources": [
-        "https://pools.trade/"
-      ],
+      "sources": ["https://pools.trade/"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     },
     {
       "address": "0xca11bde05977b3631167028862be2a173976ca11",
       "name": "Multicall3",
       "reason": "The canonical Multicall3 address, identical on every EVM chain.",
-      "sources": [
-        "https://github.com/mds1/multicall"
-      ],
+      "sources": ["https://github.com/mds1/multicall"],
       "listedIn": "https://github.com/hey-research-lab/hey-research-open/blob/main/packages/sources/src/factories/registry.ts"
     }
   ]

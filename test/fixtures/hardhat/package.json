@@ -1,0 +1,10 @@
+{
+  "name": "counter-example",
+  "version": "1.0.0",
+  "private": true,
+  "keywords": ["hardhat", "robinhood-chain"],
+  "devDependencies": {
+    "hardhat": "^2.22.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0"
+  }
+}

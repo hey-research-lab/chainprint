@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "hash": "0x1111111111111111111111111111111111111111111111111111111111111111",
+      "transactionType": "CREATE",
+      "contractName": "Counter",
+      "contractAddress": "0x0000000000000000000000000000000000000001",
+      "function": null,
+      "arguments": null,
+      "transaction": {
+        "from": "0x0000000000000000000000000000000000000002",
+        "gas": "0x2dc6c0",
+        "value": "0x0",
+        "input": "0x6080",
+        "nonce": "0x0",
+        "chainId": "0x1237"
+      },
+      "additionalContracts": [],
+      "isFixedGasLimit": false
+    }
+  ],
+  "receipts": [],
+  "libraries": [],
+  "pending": [],
+  "returns": {},
+  "timestamp": 1759400000,
+  "chain": 4663,
+  "commit": "abc1234"
+}

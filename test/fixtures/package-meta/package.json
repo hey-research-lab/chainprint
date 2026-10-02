@@ -1,0 +1,8 @@
+{
+  "name": "example-sdk",
+  "description": "Helpers for building on Robinhood Chain",
+  "keywords": ["evm", "RobinhoodChain"],
+  "dependencies": {
+    "example-robinhood-chain-utils": "^1.0.0"
+  }
+}

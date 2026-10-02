@@ -1,0 +1,6 @@
+{
+  "transactions": [
+    { "transactionType": "CREATE", "transaction": { "chainId": "0x1237" } }
+  ],
+  "chain": 4663
+}

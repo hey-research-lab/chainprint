@@ -313,6 +313,10 @@ const ethersNetwork = (value: string): RegExp =>
     `(?:JsonRpcProvider|WebSocketProvider|StaticJsonRpcProvider|Network\\.from|getDefaultProvider)\\s*\\([^)]*?(?<![\\w.])${value}${END}`,
   );
 
+/** A hostname as a whole label sequence: not a suffix of a longer name, not the prefix of a look-alike. */
+const hostPattern = (host: string): RegExp =>
+  new RegExp(`(?<![\\w.-])${escapeRe(host)}(?![\\w-]|\\.[\\w-])`, 'i');
+
 export const PATTERNS = {
   configChainId: configKey(N),
   defineChainCall: /\bdefineChain\s*\(/,
@@ -320,9 +324,10 @@ export const PATTERNS = {
   codeChainId: codeKey(N),
   ethersNetwork: ethersNetwork(N),
   caip2: new RegExp(`${escapeRe(CAIP2)}(?!\\d)`, 'i'),
-  rpcHost: new RegExp(`(?<![\\w-])${escapeRe(PUBLIC_RPC_HOST)}(?![\\w-])`, 'i'),
-  explorerHost: new RegExp(`(?<![\\w-])${escapeRe(EXPLORER_HOST)}(?![\\w-])`, 'i'),
-  chainName: /robinhood[\s_-]?chain/i,
+  rpcHost: hostPattern(PUBLIC_RPC_HOST),
+  explorerHost: hostPattern(EXPLORER_HOST),
+  /** Not when it is a hostname label (robinhoodchain.blockscout.com is the explorer rule's). */
+  chainName: /robinhood[\s_-]?chain(?![\w-]*\.[a-z])/i,
   docChainId: new RegExp(`chain[\\s_-]?id\\W{0,4}${N}${END}`, 'i'),
   /** Any 0x address not embedded in a longer hex string. */
   address: /(?<![0-9a-zA-Z])0x[0-9a-fA-F]{40}(?![0-9a-zA-Z])/g,
