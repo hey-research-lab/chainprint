@@ -1,0 +1,84 @@
+{
+  "name": "@hey-research-lab/chainprint",
+  "version": "0.1.0",
+  "description": "Detects evidence that a source repository targets Robinhood Chain (chain id 4663) and explains a deterministic confidence. A marker is evidence, not identity.",
+  "license": "MIT",
+  "author": "HEY Research Lab",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./data/known-addresses.json": "./data/known-addresses.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "chainprint": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "data",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hey-research-lab/chainprint.git"
+  },
+  "homepage": "https://heyresearch.xyz/developers",
+  "bugs": {
+    "url": "https://github.com/hey-research-lab/chainprint/issues"
+  },
+  "keywords": [
+    "hey-research",
+    "robinhood-chain",
+    "static-analysis",
+    "cli",
+    "evm",
+    "developer-tools",
+    "typescript"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@9.15.1",
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "scan": "node scripts/scan.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepack": "pnpm build"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1",
+    "vitest": "^2.1.8"
+  }
+}
