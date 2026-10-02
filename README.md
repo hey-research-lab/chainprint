@@ -214,6 +214,12 @@ Worked examples (all in `test/fixtures/`):
 - On an error, `--json` prints `{ "schema": "chainprint/v1", "ok": false, "error": { "code", "message" } }`.
 - The output carries no timestamp, so the same tree always gives byte-identical output.
 
+### Limitations
+
+- A file over 1 MiB is not read, deployment records included; it is listed under `scan.skipped` and its markers are not measured. A very large Foundry broadcast can fall under this limit.
+- Patterns read one line at a time: a chain id split across lines, built at run time, or read from an environment variable is not seen.
+- chainprint reads what is in the tree. A marker can be copied, stale or aspirational; a missing marker can live in a private repository, a submodule or a skipped directory.
+
 ## How it relates to HEY Research Lab
 
 chainprint is an independent, standalone tool from [HEY Research Lab](https://heyresearch.xyz), the builder-evidence layer for Robinhood Chain. It uses no HEY API and sends nothing anywhere. Its rules are its own, written from public chain facts; they are not HEY's discovery or qualification logic, and a chainprint result does not put a repository on HEY or change anything there. HEY's own review stays authoritative for what HEY publishes. The known-address list is taken from HEY's public factory registry in [hey-research-open](https://github.com/hey-research-lab/hey-research-open). Developer docs: <https://heyresearch.xyz/developers>.

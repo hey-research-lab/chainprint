@@ -216,7 +216,7 @@ export const RULES: readonly RuleDefinition[] = [
     weight: 0,
     tier: 'context',
     counted: false,
-    title: 'Robinhood Chain testnet (46630), reported and not counted',
+    title: 'Robinhood Chain testnet (46630)',
     reads: 'every file chainprint reads except documentation',
     matches:
       'The testnet chain id 46630 / 0xb626 where the mainnet rules would look for 4663 (chain-id keys, eip155:46630, broadcast/<script>/46630/, deployments/<network>/.chainId, ignition chain-46630). A testnet is not Robinhood Chain mainnet; it never changes the score.',
