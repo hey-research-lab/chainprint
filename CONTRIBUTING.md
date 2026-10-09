@@ -59,7 +59,7 @@ come from HEY's public material:
 - `data/known-addresses.json` was taken from the public factory registry in
   [hey-research-open](https://github.com/hey-research-lab/hey-research-open)
   (`packages/sources/src/factories/registry.ts` and `dex-pools.ts`), extracted from HEY Research
-  Lab's production contract at `21775391f6c0fb4494575e0b4463df535c65cb96` (as of 2026-10-02).
+  Lab's production contract as of 2026-10-02.
   Re-checked against production as of 2026-10-09: that registry is unchanged.
 - rules version 2's `chain-listing` follows HEY's public description of its own code-search
   reading as of 2026-10-09 (README, "Compared with HEY's own code-search rules"); the patterns are
