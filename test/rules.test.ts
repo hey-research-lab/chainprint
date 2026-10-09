@@ -26,12 +26,16 @@ describe('rule table', () => {
       'package-metadata': 10,
       'chain-name': 5,
       'doc-mention': 5,
+      'chain-listing': 0,
       'testnet-marker': 0,
     });
   });
 
-  it('counts every rule except the testnet marker', () => {
-    expect(RULES.filter((r) => !r.counted).map((r) => r.id)).toEqual(['testnet-marker']);
+  it('counts every rule except chain listings and the testnet marker', () => {
+    expect(RULES.filter((r) => !r.counted).map((r) => r.id)).toEqual([
+      'chain-listing',
+      'testnet-marker',
+    ]);
   });
 
   it('documents what every rule reads and matches', () => {

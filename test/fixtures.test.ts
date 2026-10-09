@@ -147,4 +147,34 @@ describe('fixture repositories', () => {
     expect(countedRules(report)).toEqual(['chain-id-config']);
     expect(existsSync(join(fixture('never-executed'), 'EXECUTED'))).toBe(false);
   });
+
+  it('listings (rules v2): a chain list, vendored chain definitions and agent files are shown, never counted', () => {
+    const report = scanFixture('listings');
+    // Only the document named for the chain counts; before rules v2 the vendored defineChain alone was HIGH.
+    expect(countedRules(report)).toEqual(['doc-mention']);
+    expect(report).toMatchObject({ confidence: 'LOW', score: 5, anchored: false });
+    expect(report.evidence.filter((e) => e.rule === 'doc-mention').map((e) => e.file)).toEqual([
+      'docs/ROBINHOOD.md',
+      'docs/ROBINHOOD.md',
+    ]);
+    const listed = report.evidence.filter((e) => e.rule === 'chain-listing');
+    expect(new Set(listed.map((e) => e.file))).toEqual(
+      new Set([
+        '.cursor/rules/networks.json',
+        'AGENTS.md',
+        'src/data/chain-registry.json',
+        'src/vendor-viem/chains/definitions/robinhood.ts',
+      ]),
+    );
+    expect(listed.every((e) => !e.counted && e.weight === 0 && e.tier === 'context')).toBe(true);
+    expect(
+      listed.some((e) => e.detail.startsWith('vendored chain definitions: chain-id-config, ')),
+    ).toBe(true);
+    expect(
+      listed.some((e) => e.detail.startsWith('chain list: caip2, ') && e.file.endsWith('.json')),
+    ).toBe(true);
+    expect(listed.find((e) => e.file === 'AGENTS.md')?.detail).toMatch(
+      /^agent instructions: doc-mention, /,
+    );
+  });
 });

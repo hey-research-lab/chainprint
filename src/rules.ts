@@ -17,10 +17,12 @@
  *   NONE   score = 0
  *
  * Changing a weight, a band or a pattern is a change of `RULES_VERSION`.
+ * `chainprint-rules/2` (0.2.0) added `chain-listing`: markers in a file that
+ * lists chains rather than targets one are reported and never counted.
  */
 import { CAIP2, CHAIN_ID, PUBLIC_RPC_HOST } from './chain';
 
-export const RULES_VERSION = 'chainprint-rules/1' as const;
+export const RULES_VERSION = 'chainprint-rules/2' as const;
 export const OUTPUT_SCHEMA = 'chainprint/v1' as const;
 
 /** The explorer's hostname (from `EXPLORER_URL`). */
@@ -62,6 +64,7 @@ export const RULE_IDS = [
   'package-metadata',
   'chain-name',
   'doc-mention',
+  'chain-listing',
   'testnet-marker',
 ] as const;
 export type RuleId = (typeof RULE_IDS)[number];
@@ -211,6 +214,18 @@ export const RULES: readonly RuleDefinition[] = [
       'documentation: *.md, *.mdx, *.markdown, *.rst, *.adoc, *.txt, and HEY declaration files (hey-project.json, hey-ship.json)',
     matches:
       'The name Robinhood Chain, eip155:4663, the public RPC or explorer hostname, or "chain id" followed by 4663. The weakest marker: anyone can write a README.',
+  },
+  {
+    id: 'chain-listing',
+    weight: 0,
+    tier: 'context',
+    counted: false,
+    title:
+      'Robinhood Chain listed beside other chains (chain list, vendored definitions, agent file)',
+    reads:
+      'chain lists (chains*.json, *chain-registry* files, chainlist/), vendored chain definitions (chains/definitions/), and agent instruction files (agent tool folders such as .agents/, .cursor/, .codex/ and .windsurf/; SKILL.md, AGENTS.md, GEMINI.md and the like)',
+    matches:
+      'Any marker another rule would count, found in one of these files. Such a file says the code knows the chain, not that it targets it: a chain list names many chains, a vendored definition is a copy of a library, an agent file instructs a tool. Reported, never counted.',
   },
   {
     id: 'testnet-marker',

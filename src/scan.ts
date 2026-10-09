@@ -136,6 +136,7 @@ type FileClass =
       chain: number;
     }
   | { kind: 'env-template' }
+  | { kind: 'listing'; what: ListingKind; documentation: boolean }
   | { kind: 'documentation' }
   | { kind: 'config' }
   | { kind: 'package' }
@@ -153,6 +154,27 @@ const JS_LIKE = /\.(?:[cm]?[jt]sx?|vue|svelte|astro)$/i;
 const DOC_EXT = /\.(?:md|mdx|markdown|rst|adoc|txt)$/i;
 /** HEY's own declaration files: what a builder says about the project, read like a README. */
 const HEY_DECLARATION = /^hey-(?:project|ship)\.json$/;
+
+/** Why a file lists chains rather than targets one (rules v2, `chain-listing`). */
+type ListingKind = 'chain list' | 'vendored chain definitions' | 'agent instructions';
+
+/**
+ * Files that list chains rather than target one, checked in order. A README or a document named
+ * for Robinhood Chain (`ROBINHOOD.md`, `docs/robinhood-chain.md`) is never one: it is the team's
+ * own instruction, read as documentation.
+ */
+const LISTING_PATHS: ReadonlyArray<readonly [ListingKind, RegExp]> = [
+  ['vendored chain definitions', /(?:^|\/)chains\/definitions\//i],
+  ['chain list', /(?:^|\/)chainlist\//i],
+  ['chain list', /(?:^|\/)chains[^/]*\.json$/i],
+  ['chain list', /(?:^|\/)[^/]*chain[-_]?registry[^/]*$/i],
+  ['agent instructions', /(?:^|\/)\.(?:agents?|c[l]aude|cursor|codex|windsurf)\//i],
+  ['agent instructions', /(?:^|\/)(?:SKILL|AGENTS|C[L]AUDE|GEMINI)\.md$/i],
+];
+
+function listingKind(path: string): ListingKind | undefined {
+  return LISTING_PATHS.find(([, re]) => re.test(path))?.[0];
+}
 
 function classify(file: WalkedFile): FileClass {
   const recordable = !TEST_DATA_SEGMENT.test(file.path);
@@ -172,6 +194,13 @@ function classify(file: WalkedFile): FileClass {
     if (ignition)
       return { kind: 'deployment', rule: 'ignition-deployment', chain: Number(ignition[1]) };
   }
+  const listing = listingKind(file.path);
+  if (listing)
+    return {
+      kind: 'listing',
+      what: listing,
+      documentation: DOC_EXT.test(file.name) || HEY_DECLARATION.test(file.name),
+    };
   if (ENV_TEMPLATE_NAME.test(file.name)) return { kind: 'env-template' };
   if (DOC_EXT.test(file.name) || HEY_DECLARATION.test(file.name)) return { kind: 'documentation' };
   if (file.name === 'package.json') return { kind: 'package' };
@@ -556,6 +585,29 @@ function matchFile(file: WalkedFile, lines: readonly string[]): Match[] {
       ];
     case 'env-template':
       return [...envMatches(lines), ...knownAddressMatches(lines)];
+    case 'listing': {
+      // Every marker is still found and shown, under chain-listing; none is counted.
+      const found = cls.documentation
+        ? docMatches(lines)
+        : [
+            ...lineRules(
+              JS_LIKE.test(file.name) && PATTERNS.defineChainCall.test(file.text)
+                ? 'config'
+                : 'source',
+              lines,
+            ),
+            ...knownAddressMatches(lines),
+          ];
+      return found.map((match) =>
+        match.rule === 'testnet-marker'
+          ? match
+          : {
+              ...match,
+              rule: 'chain-listing',
+              detail: `${cls.what}: ${match.rule}, ${match.detail}`,
+            },
+      );
+    }
     case 'documentation':
       return docMatches(lines);
     case 'package':

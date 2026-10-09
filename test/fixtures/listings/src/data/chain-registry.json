@@ -1,0 +1,6 @@
+{
+  "chains": [
+    { "name": "Ethereum", "chainId": 1, "caip2": "eip155:1" },
+    { "name": "Robinhood Chain", "chainId": 4663, "caip2": "eip155:4663" }
+  ]
+}

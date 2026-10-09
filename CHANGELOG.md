@@ -4,6 +4,19 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## 0.2.0 — 2026-10-09
+
+- Rules version `chainprint-rules/2`: a new uncounted rule, `chain-listing` (weight 0, tier
+  `context`). A marker in a chain list (`chains*.json`, a `*chain-registry*` file, `chainlist/`),
+  in vendored chain definitions (`chains/definitions/`) or in an agent instruction file (agent tool
+  folders such as `.agents/` or `.cursor/`, `SKILL.md`, `AGENTS.md`, `GEMINI.md`) is reported
+  under `chain-listing` with what kind of file it was in, and never counted. Such a file says the
+  code knows the chain, not that it targets it: a vendored `defineChain` for Robinhood Chain alone
+  used to score HIGH. This follows HEY's own code-search reading as of 2026-10-09; the README
+  names the two places chainprint deliberately differs.
+- Every other rule, weight and confidence band is unchanged. The `chainprint/v1` output gains one
+  possible `rule` value; nothing is removed or renamed.
+
 ## 0.1.1 — 2026-10-02
 
 - Hardhat 3 configs: a `4663: { … }` entry under `chainDescriptors` is a toolchain chain id (`chain-id-config`); it was missed.
