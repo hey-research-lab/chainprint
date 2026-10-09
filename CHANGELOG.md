@@ -4,6 +4,11 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## Unreleased
+
+- Development: vitest 4.1.11 / tsup 8.5.1, with esbuild held at ^0.28.1 by a pnpm override; clears
+  dev-only advisories in the test and build toolchain. No runtime change.
+
 ## 0.2.0 — 2026-10-09
 
 - Rules version `chainprint-rules/2`: a new uncounted rule, `chain-listing` (weight 0, tier
