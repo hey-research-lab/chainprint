@@ -225,7 +225,7 @@ Worked examples (all in `test/fixtures/`):
 
 ## How it relates to HEY Research Lab
 
-chainprint is an independent, standalone tool from [HEY Research Lab](https://heyresearch.xyz), the builder-evidence layer for Robinhood Chain. It uses no HEY API and sends nothing anywhere. Its rules are its own, written from public chain facts; they are not HEY's discovery or qualification logic, and a chainprint result does not put a repository on HEY or change anything there. HEY's own review stays authoritative for what HEY publishes. The known-address list is taken from HEY's public factory registry in [hey-research-open](https://github.com/hey-research-lab/hey-research-open). Developer docs: <https://heyresearch.xyz/developers>.
+chainprint is an independent, standalone tool from [HEY Research Lab](https://heyresearch.xyz), the public record of building on Robinhood Chain — every ship with its source. It uses no HEY API and sends nothing anywhere. Its rules are its own, written from public chain facts; they are not HEY's discovery or qualification logic, and a chainprint result does not put a repository on HEY or change anything there. HEY's own review stays authoritative for what HEY publishes. The known-address list is taken from HEY's public factory registry in [hey-research-open](https://github.com/hey-research-lab/hey-research-open). Developer docs: <https://heyresearch.xyz/developers>.
 
 **Compared with HEY's own code-search rules (as of 2026-10-09).** HEY's discovery does not count a
 Robinhood Chain marker found in a lockfile, a chain registry or chain list, a changelog, a vendored
