@@ -160,7 +160,7 @@ Worked examples (all in `test/fixtures/`):
 {
   "schema": "chainprint/v1",
   "ok": true,
-  "tool": { "name": "chainprint", "version": "0.2.0", "rules": "chainprint-rules/2" },
+  "tool": { "name": "chainprint", "version": "0.3.0", "rules": "chainprint-rules/2" },
   "chain": { "name": "Robinhood Chain", "chainId": 4663, "caip2": "eip155:4663" },
   "root": ".",
   "result": "evidence_found",

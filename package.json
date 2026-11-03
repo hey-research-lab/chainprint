@@ -1,6 +1,6 @@
 {
   "name": "@hey-research-lab/chainprint",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Detects evidence that a source repository targets Robinhood Chain (chain id 4663) and explains a deterministic confidence. A marker is evidence, not identity.",
   "license": "MIT",
   "author": "HEY Research Lab",
@@ -68,7 +68,7 @@
     "prepack": "pnpm build"
   },
   "dependencies": {
-    "zod": "^3.24.1"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
@@ -79,7 +79,7 @@
     "tsup": "^8.5.1",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.18.1",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.12"
   },
   "pnpm": {
     "overrides": {

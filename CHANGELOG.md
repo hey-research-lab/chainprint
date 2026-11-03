@@ -4,8 +4,12 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## 0.3.0 — unreleased (not yet on npm)
 
+- Security: `zod` moves from `^3.24.1` to `^4.6.7` (GHSA-mrhx-c7xc-m3w5, memory exhaustion on large
+  arrays, fixed only in 4.6.6). Same rules (`chainprint-rules/2`), same reports; minor bump because the
+  runtime dependency changes major.
+- Development: vitest 4.1.12.
 - Development: vitest 4.1.11 / tsup 8.5.1, with esbuild held at ^0.28.1 by a pnpm override; clears
   dev-only advisories in the test and build toolchain. No runtime change.
 
