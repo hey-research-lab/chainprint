@@ -3,9 +3,9 @@
 **What is this?** A local, offline command-line tool that inspects a source tree and reports the evidence it finds that the code targets Robinhood Chain (chain id 4663), with a deterministic, documented confidence.
 
 [![CI](https://github.com/hey-research-lab/chainprint/actions/workflows/ci.yml/badge.svg)](https://github.com/hey-research-lab/chainprint/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-![Node >= 22](https://img.shields.io/badge/node-%3E%3D22-brightgreen.svg)
-![Robinhood Chain 4663](https://img.shields.io/badge/Robinhood%20Chain-4663-informational.svg)
+[![License: MIT](assets/badges/license-mit.svg)](LICENSE)
+![Node >= 22](assets/badges/node-22.svg)
+![Robinhood Chain 4663](assets/badges/robinhood-chain-4663.svg)
 
 ## Why it exists
 
