@@ -265,6 +265,8 @@ See [SECURITY.md](SECURITY.md). In short, chainprint:
 - prints only the matched line, redacted (URL credentials and query strings, long tokens, 64+ hex digit strings) and cut to 120 characters, with control and bidi characters removed. Env template values are never printed unless the value is the public marker itself;
 - writes nothing.
 
+HEY Research Lab also reviews other projects' code and reports what it finds privately first: [security credits](https://github.com/hey-research-lab#security-credits).
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). `pnpm install`, then `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build` and `pnpm scan` (leak and attribution scan). Tests run offline against the fixture repositories in `test/fixtures/`; network access is blocked in the test runner. A new rule, weight or known address needs a public citation, a fixture and a test, and bumps the rules version.
